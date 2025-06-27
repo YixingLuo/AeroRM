@@ -161,12 +161,14 @@ def ask_llm_for_summary_first_inner(cluster_data, GPU):
         formatted_data.append(f"Data {index+1} [name：{first_names}; keywords：{first_keywords}; domains：{first_domains}; requirements：{truncated_requirements}]")
 
     prompts = f"""
-        You are an expert in software asset management, particularly within the embedded software domain. Your task is to summarize the name and description of a group of software assets (EmbedIP) based on the provided information.
-        Output Format：
-            cluster_name：<cluster_name>
-            description：<cluster_description>
-        Input：
-            {";".join(formatted_data)}
+        ### Instruction ###
+        You are an expert in the domain of aerospace software. Your task is to summarize the name and description of a cluster of reusable requirements artifacts based on the following metadata. Be specific and avoid overgeneralization. Flag clusters with domain conflicts or heterogeneous semantics.
+        ### Input ####
+        {";".join(formatted_data)}
+        ### Output Format ###
+            cluster_name: <cluster_name>
+            description: <cluster_description>
+            anomaly_falg: <anomaly_flag>
     """
     
     generated_texts = []
@@ -334,12 +336,14 @@ def ask_llm_for_summary_recursion_inner(cluster_data, GPU):
         formatted_data.append(f"Data {index+1} [name：{first_name}; description：{truncated_description}]")
 
     prompts = f"""
-        You are an expert in software asset management, particularly within the embedded software domain. Your task is to summarize the name and description of a group of software assets (EmbedIP) based on the provided information.
-        Output Format：
-            cluster_name：<cluster_name>
-            description：<cluster_description>
-        Input：
-            {";".join(formatted_data)}
+        ### Instruction ###
+        You are an expert in the domain of aerospace software. Your task is to summarize the name and description of a cluster of reusable requirements artifacts based on the following metadata. Be specific and avoid overgeneralization. Flag clusters with domain conflicts or heterogeneous semantics.
+        ### Input ####
+        {";".join(formatted_data)}
+        ### Output Format ###
+            cluster_name: <cluster_name>
+            description: <cluster_description>
+            anomaly_falg: <anomaly_flag>
     """
 
     generated_texts = []
@@ -512,12 +516,14 @@ def ask_llm_for_summary_first_inner_glm4(cluster_data, GPU):
         formatted_data.append(f"Data {index+1} [name：{first_names}; keywords：{first_keywords}; domains：{first_domains}; requirements：{truncated_requirements}]")
 
     prompts = f"""
-        You are an expert in software asset management, particularly within the embedded software domain. Your task is to summarize the name and description of a group of software assets (EmbedIP) based on the provided information.
-        Output Format：
-            cluster_name：<cluster_name>
-            description：<cluster_description>
-        Input：
-            {";".join(formatted_data)}
+        ### Instruction ###
+        You are an expert in the domain of aerospace software. Your task is to summarize the name and description of a cluster of reusable requirements artifacts based on the following metadata. Be specific and avoid overgeneralization. Flag clusters with domain conflicts or heterogeneous semantics.
+        ### Input ####
+        {";".join(formatted_data)}
+        ### Output Format ###
+            cluster_name: <cluster_name>
+            description: <cluster_description>
+            anomaly_falg: <anomaly_flag>
     """
     
     generated_texts = []
@@ -685,12 +691,14 @@ def ask_llm_for_summary_recursion_inner_glm4(cluster_data, GPU):
         formatted_data.append(f"Data {index+1} [name：{first_name}; description：{truncated_description}]")
 
     prompts = f"""
-        You are an expert in software asset management, particularly within the embedded software domain. Your task is to summarize the name and description of a group of software assets (EmbedIP) based on the provided information.
-        Output Format：
-            cluster_name：<cluster_name>
-            description：<cluster_description>
-        Input：
-            {";".join(formatted_data)}
+        ### Instruction ###
+        You are an expert in the domain of aerospace software. Your task is to summarize the name and description of a cluster of reusable requirements artifacts based on the following metadata. Be specific and avoid overgeneralization. Flag clusters with domain conflicts or heterogeneous semantics.
+        ### Input ####
+        {";".join(formatted_data)}
+        ### Output Format ###
+            cluster_name: <cluster_name>
+            description: <cluster_description>
+            anomaly_falg: <anomaly_flag>
     """
 
     generated_texts = []
